@@ -2,6 +2,7 @@ package net.cloudcentrik.woocommerceclient;
 
 
 import net.cloudcentrik.woocommerceclient.configuration.AppConfiguration;
+import net.cloudcentrik.woocommerceclient.scheduler.JobSchedular;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,6 +26,9 @@ public class App
         AppConfiguration.loadConfiguration(configFile);
 
         TestFactory.showSystemInfo();
+
+        JobSchedular.start();
+
     }
 
 

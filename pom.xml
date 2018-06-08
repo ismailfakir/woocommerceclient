@@ -104,6 +104,19 @@
 
     <!--apache common configuration2 END-->
 
+    <!--quartz-scheduler START-->
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz-jobs</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <!--quartz-scheduler END-->
+
     <!-- <dependency>
        <groupId>com.icoderman</groupId>
        <artifactId>wc-api-java</artifactId>
