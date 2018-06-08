@@ -1,0 +1,8 @@
+=========================================
+#                                       #
+# Wocommerce website                    #
+#                                       #
+=========================================
+mouhorna.cloudcentrik.net
+wordpress user: mousumy
+password: mou_1990

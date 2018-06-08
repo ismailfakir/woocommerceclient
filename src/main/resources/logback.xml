@@ -1,0 +1,13 @@
+<configuration>
+    <!-- definition of appender STDOUT -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%green([%date]) %highlight([%level]) %yellow([%logger{10} %file:%line])  %cyan(%msg%n)</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <!-- appender referenced after it is defined -->
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
