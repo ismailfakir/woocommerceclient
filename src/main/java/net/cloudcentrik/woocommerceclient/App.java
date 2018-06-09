@@ -8,6 +8,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.FileNotFoundException;
 
+import static net.cloudcentrik.woocommerceclient.TestFactory.createProductAttribute;
+import static net.cloudcentrik.woocommerceclient.TestFactory.showAProduct;
+import static net.cloudcentrik.woocommerceclient.TestFactory.showAllProductAttributes;
+
 public class App
 {
     private static final Logger log = LoggerFactory.getLogger(App.class);
@@ -25,9 +29,13 @@ public class App
         log.info("Loding system configuration from "+configFile);
         AppConfiguration.loadConfiguration(configFile);
 
-        TestFactory.showSystemInfo();
+        //JobSchedular.start();
 
-        JobSchedular.start();
+        //TestFactory.showSystemInfo();
+        //createProductAttribute();
+        showAllProductAttributes();
+
+        //showAProduct();
 
     }
 

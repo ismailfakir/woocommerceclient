@@ -15,6 +15,7 @@ public enum EndpointBaseType {
     TAXES("taxes"),
     TAXES_CLASSES("taxes/classes"),
     SYSTEM_STATUS("system_status"),
+    //SYSTEM_STATUS("_jsonp=system_status"),
     WEBHOOKS("webhooks");
 
     private String value;

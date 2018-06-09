@@ -1,12 +1,14 @@
 package net.cloudcentrik.woocommerceclient;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class WooCommerceJsonUtils {
+    private static final Logger log = LoggerFactory.getLogger(WooCommerceJsonUtils.class);
 
     public static Map<String,String> getEntryAsMap(JsonObject root,String key){
 
@@ -26,6 +28,14 @@ public class WooCommerceJsonUtils {
         }
 
         return map;
+    }
+
+    public static void prettyPrintJson(String json){
+        JsonParser parser = new JsonParser();
+        JsonElement jsonTree = parser.parse(json);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        log.info(gson.toJson(jsonTree));
+
     }
 
 

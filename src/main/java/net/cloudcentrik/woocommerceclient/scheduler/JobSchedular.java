@@ -2,6 +2,7 @@ package net.cloudcentrik.woocommerceclient.scheduler;
 
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
+import org.quartz.SchedulerFactory;
 import org.quartz.Trigger;
 import org.quartz.impl.StdSchedulerFactory;
 
@@ -12,6 +13,7 @@ import static org.quartz.TriggerBuilder.newTrigger;
 public class JobSchedular {
 
     public static void start() throws Exception{
+
         // Grab the Scheduler instance from the Factory
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
 
@@ -21,6 +23,8 @@ public class JobSchedular {
         // define the job and tie it to our MyJob class
         JobDetail job = newJob( TestJob.class)
                 .withIdentity("job1", "group1")
+                .usingJobData("min",1)
+                .usingJobData("max",100)
                 .build();
 
         // Trigger the job to run now, and then repeat every 40 seconds
