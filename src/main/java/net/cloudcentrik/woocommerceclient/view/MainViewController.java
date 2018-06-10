@@ -2,12 +2,11 @@ package net.cloudcentrik.woocommerceclient.view;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import net.cloudcentrik.woocommerceclient.EndpointBaseType;
-import net.cloudcentrik.woocommerceclient.WooCommerceApiClient;
-import net.cloudcentrik.woocommerceclient.WooCommerceJsonUtils;
 
 /** Controls the main application screen */
 public class MainViewController {
@@ -19,6 +18,9 @@ public class MainViewController {
 
   @FXML
   private TextArea responseTextArea;
+
+  @FXML
+  ProgressBar progressBar;
 
   @FXML
   private Button apiRequestButton;
@@ -51,8 +53,11 @@ public class MainViewController {
 
     apiRequestButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override public void handle(ActionEvent e){
-        if(endpointBaseType!=null&&endpointBaseType.equals(EndpointBaseType.PRODUCTS)){
-          responseTextArea.setText(WooCommerceJsonUtils.prettifyJson(WooCommerceApiClient.getAllProduct()));
+        if(endpointBaseType!=null){
+          //responseTextArea.setText(WooCommerceJsonUtils.prettifyJson(WooCommerceApiClient.getAllProduct()));
+          ApiService service=new ApiService(responseTextArea,progressBar,endpointBaseType);
+          new Thread(service).start();
+
         }
 
       }
