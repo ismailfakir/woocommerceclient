@@ -14,28 +14,45 @@ public class RequestUrlGenerator {
     private static final Logger log = LoggerFactory.getLogger(RequestUrlGenerator.class);
 
 
-    public static String makeRequestUrl(HttpMethod httpMethod,EndpointBaseType endpointBaseType)throws Exception{
+    public static String makeRequestUrl(HttpMethod httpMethod, EndpointBaseType endpointBaseType) {
 
-        //AppConfiguration.loadConfiguration();
-        OAuthConfig config = new OAuthConfig(baseUrl, consumerKey, consumerSecret);
-        String url = baseUrl + ApiVersionType.V2.getValue() + endpointBaseType.getValue();
-        String secureUrl = OAuthSignature.getAsQueryString(config, url, httpMethod);
-        String requestUrl = url + "?" + secureUrl;
+        String requestUrl = "";
+        try {
+            //AppConfiguration.loadConfiguration();
+            OAuthConfig config = new OAuthConfig(baseUrl, consumerKey, consumerSecret);
+            String url = baseUrl + ApiVersionType.V2.getValue() + endpointBaseType.getValue();
+            String secureUrl = OAuthSignature.getAsQueryString(config, url, httpMethod);
+            requestUrl = url + "?" + secureUrl;
 
-        log.info(requestUrl);
+            log.info(requestUrl);
+
+            return requestUrl;
+
+        } catch (Exception e) {
+
+        }
 
         return requestUrl;
 
     }
 
-    public static String makeRequestUrl(HttpMethod httpMethod,EndpointBaseType endpointBaseType,int id)throws Exception{
-        //AppConfiguration.loadConfiguration();
-        OAuthConfig config = new OAuthConfig(baseUrl, consumerKey, consumerSecret);
-        String url = baseUrl + ApiVersionType.V2.getValue() + endpointBaseType.getValue()+"/"+id;
-        String secureUrl = OAuthSignature.getAsQueryString(config, url, httpMethod);
-        String requestUrl = url +"?" + secureUrl;
+    public static String makeRequestUrl(HttpMethod httpMethod, EndpointBaseType endpointBaseType, int id) {
 
-        log.info(requestUrl);
+        String requestUrl = "";
+        try {
+            //AppConfiguration.loadConfiguration();
+            OAuthConfig config = new OAuthConfig(baseUrl, consumerKey, consumerSecret);
+            String url = baseUrl + ApiVersionType.V2.getValue() + endpointBaseType.getValue() + "/" + id;
+            String secureUrl = OAuthSignature.getAsQueryString(config, url, httpMethod);
+            requestUrl = url + "?" + secureUrl;
+
+            log.info(requestUrl);
+
+            return requestUrl;
+
+        } catch (Exception e) {
+
+        }
 
         return requestUrl;
 

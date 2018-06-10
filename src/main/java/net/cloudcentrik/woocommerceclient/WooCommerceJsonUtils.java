@@ -38,6 +38,14 @@ public class WooCommerceJsonUtils {
 
     }
 
+    public static String prettifyJson(String json){
+        JsonParser parser = new JsonParser();
+        JsonElement jsonTree = parser.parse(json);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(jsonTree);
+
+    }
+
 
 
 }

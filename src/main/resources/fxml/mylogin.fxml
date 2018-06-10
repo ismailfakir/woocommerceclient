@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Group xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.cloudcentrik.woocommerceclient.view.LoginController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="933.0">
+          <children>
+              <Text fill="#1b10cc" fontSmoothingType="LCD" layoutX="355.0" layoutY="47.0" stroke="#9e2c2c" strokeType="OUTSIDE" strokeWidth="0.0" text="Woocommerce client" textAlignment="CENTER" wrappingWidth="241.515625">
+                  <font>
+                      <Font size="21.0" />
+                  </font>
+              </Text>
+            <Group layoutX="336.0" layoutY="151.0">
+               <children>
+                      <Label layoutX="18.0" layoutY="47.0" text="Password" />
+                      <Label layoutY="5.0" text="Useer Name" />
+                      <TextField fx:id="user" layoutX="91.0" text="admin"/>
+                  <Group layoutX="91.0" layoutY="42.0">
+                     <children>
+                            <TextField fx:id="password" text="admin"/>
+                     </children>
+                  </Group>
+                  <Button fx:id="loginButton" layoutX="169.0" layoutY="79.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" text="Login" />
+               </children>
+            </Group>
+          </children>
+      </Pane>
+   </children>
+</Group>

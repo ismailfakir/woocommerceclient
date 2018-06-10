@@ -3,6 +3,7 @@ package net.cloudcentrik.woocommerceclient;
 
 import net.cloudcentrik.woocommerceclient.configuration.AppConfiguration;
 import net.cloudcentrik.woocommerceclient.scheduler.JobSchedular;
+import net.cloudcentrik.woocommerceclient.view.AppView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,9 +34,12 @@ public class App
 
         //TestFactory.showSystemInfo();
         //createProductAttribute();
-        showAllProductAttributes();
+        //showAllProductAttributes();
 
         //showAProduct();
+
+        AppView view=new AppView();
+        view.lodView();
 
     }
 

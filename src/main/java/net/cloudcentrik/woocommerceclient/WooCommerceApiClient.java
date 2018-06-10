@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class WooCommerceApiClient {
 
-    public static String getBaseGetResponseById(EndpointBaseType endpointBaseType,int id) throws Exception{
+    public static String getBaseGetResponseById(EndpointBaseType endpointBaseType,int id){
 
         String responseJson = "";
         CloseableHttpResponse response = null;
@@ -37,7 +37,7 @@ public class WooCommerceApiClient {
         return responseJson;
     }
 
-    public static String getBaseGetResponse(EndpointBaseType endpointBaseType) throws Exception{
+    public static String getBaseGetResponse(EndpointBaseType endpointBaseType){
 
         String responseJson = "";
         CloseableHttpResponse response = null;
@@ -115,6 +115,10 @@ public class WooCommerceApiClient {
 
     public static String getAllProductAttributes()throws Exception{
         return getBaseGetResponse(EndpointBaseType.PRODUCTS_ATTRIBUTES);
+    }
+
+    public static String getAllProduct(){
+        return getBaseGetResponse(EndpointBaseType.PRODUCTS);
     }
 
     public static String createProductAttributes(String attributeJson)throws Exception{
